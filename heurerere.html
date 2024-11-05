@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>regarde le temps</title>
+</head>
+<style>
+  body {
+    background-color: #282c34;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  .timer {
+    font-size: 2rem;
+    color: #61dafb;
+    padding: 10px;
+    background-color: #383c48;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #61dafb;
+    transition: background-color 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: #2180c0;
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="timer" id="timer">00 : 00 : 00</div>
+    <button class="button" id="play">PLAY</button>
+    <button class="button" id="pause">STOP</button>
+    <button class="button" id="reset">RESET</button>
+  </div>
+</body>
+</html>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var secondes = 0;
+    var minutes = 0;
+    var heures = 0;
+    var on = false;
+    var reset = false;
+    var timerID;
+
+    function chrono() {
+      secondes += 1;
+
+      if (secondes > 59) {
+        minutes += 1;
+        secondes = 0;
+      }
+      
+      if (minutes > 59) {
+        heures += 1;
+        minutes = 0;
+      }
+
+      var formattedHeures = heures < 10 ? "0" + heures : heures;
+      var formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+      var formattedSeconds = secondes < 10 ? "0" + secondes : secondes;
+
+      document.getElementById("timer").innerHTML = formattedHeures + " : " + formattedMinutes + " : " + formattedSeconds;
+    }
+
+    function Start() {
+      if (!on) {
+        timerID = setInterval(chrono, 1000);
+        on = true;
+        reset = false;
+      }
+    }
+
+    function Stop() {
+      if (on) {
+        on = false;
+        clearInterval(timerID);
+      }
+    }
+
+    function Reset() {
+      if (!reset) {
+        clearInterval(timerID);
+        secondes = 0;
+        minutes = 0;
+        heures = 0;
+        document.getElementById("timer").innerHTML = "00 : 00 : 00";
+        reset = true;
+      }
+    }
+    function SPEED() {
+      if (!on) {
+        timerID = setInterval(chrono, 1000);
+        on = true;
+        reset = false;
+      }
+    }
+
+    document.getElementById("play").addEventListener("click", Start);
+    document.getElementById("pause").addEventListener("click", Stop);
+    document.getElementById("reset").addEventListener("click", Reset);
+  });
+</script>
