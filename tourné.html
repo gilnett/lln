@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Image Rotation</title>
+    <style>
+      
+
+     
+    </style>
 </head>
 <body>
-    
+    <img src="image.png" id="image" alt="Image" width="200">
+    <button onclick="rotateImage()" id="droite">Tourner à droite</button>
+
     <script>
+        let rotation = 0; 
+
+        function rotateImage() {
+            rotation += 90; 
+            document.getElementById('image').style.transform = `rotate(${rotation}deg)`;
+        }
+    </script>
 </body>
 </html>
