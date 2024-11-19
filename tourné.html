@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Rotation</title>
     <style>
-      
+      #image
+      {
+
+        transition: transform 0.3s ease; 
+      }
 
      
     </style>
@@ -18,7 +22,7 @@
         let rotation = 0; 
 
         function rotateImage() {
-            rotation += 90; 
+            rotation += 45; 
             document.getElementById('image').style.transform = `rotate(${rotation}deg)`;
         }
     </script>
