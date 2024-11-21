@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnModifyImage.addEventListener("click", () => {
        modifie()
-        modal.classList.add("hidden");
+        modal.classList.add("file");
     });
 
     btnCloseModal.addEventListener("click", () => {
