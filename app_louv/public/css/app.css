@@ -102,3 +102,8 @@
     background-color: var(--action-light);
     color: var(--text-color);
 }
+#afficher{
+    background-color: blue;
+    width:100px;
+    height:100px;
+}

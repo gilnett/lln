@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Louv</title>
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/app.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&family=Passions+Conflict&family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    <script>
-       
-     </script>
-     <script src="allongée_gauchedroite.js"></script>
-     <script src="allongée_hautbas.js"></script>
-     <script src="droite.js"></script>
-     <script src="gauche.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&family=Passions+Conflict&family=Poppins:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <script src="models/app.js"></script>
+
+    <script src="models/allongée_gauchedroite.js"></script>
+    <script src="models/allongée_hautbas.js"></script>
+    <script src="models/droite.js"></script>
+    <script src="models/gauche.js"></script>
 </head>
+
 <body>
     <h1 class="title-app">Bienvenue sur notre projet</h1>
     <div class="container">
@@ -29,18 +33,25 @@
             </div>
         </div>
     </div>
-    
+
     <div id="options-modal" class="modal hidden">
-        <div class="modal-content">
-            <h3>Que voulez-vous faire ?</h3>
-            <button id="btn-modify-color">Modifier la couleur</button>
-            <button id="btn-modify-image">Modifier l'image</button>
-            <button id="btn-close-modal">Annuler</button>
-        </div>
+        <div id="afficher" ><img src=""  alt="Image"></div>
+            <div class="modal-content">
+                <h3>Que voulez-vous faire ?</h3>
+                <button id="btn-modify-color">Modifier la couleur</button>
+                <button id="btn-modify-image">Modifier l'image</button>
+                
+                <button id="btn-close-modal">Annuler</button>
+
+                <button onclick="droite()" id="droite">Tourner à droite</button>
+                <button onclick="gauche()" id="gauche">gauche</button>
+                <button onclick="axey()" id="height">Allonger</button>
+            </div>
     </div>
 
 
-    
-    <script src="models/app.js"></script>
+
+
 </body>
+
 </html>

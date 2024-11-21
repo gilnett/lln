@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     btnModifyImage.addEventListener("click", () => {
-        alert("Fonction 'Modifier l'image' en développement !");
+       modifie()
         modal.classList.add("hidden");
     });
 
@@ -69,3 +69,5 @@ function updateInfo() {
 //l'angles et la tailles a initialiser
 let rotation = 0; //deg
 let height = 100;//%
+let display = none;
+
