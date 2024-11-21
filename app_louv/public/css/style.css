@@ -1,0 +1,29 @@
+:root {
+    --action:  #151d6b;
+    --action-light: rgb(218, 235, 255);
+    --text-color: #020617;
+    --background-color: #dee1e4;
+
+    --danger: #ef4444;
+    --danger-light: #ffd1d1;
+    --attention: #fde047;
+    --attention-light: #fefce8;
+    --validation: #22c55e;
+    --validation-light: #f0fdf4;
+
+    --font-title: Ppeditorialnew, Times New Roman, sans-serif;
+    --font-text: Arial, Helvetica Neue, Helvetica, sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: var(--font-text);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
