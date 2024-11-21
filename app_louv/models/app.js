@@ -61,3 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.classList.add("hidden");
     });
 });
+//pour les angles et taille
+function updateInfo() {
+    document.getElementById('angle').textContent = rotation;
+    document.getElementById('size').textContent = height;
+}
+//l'angles et la tailles a initialiser
+let rotation = 0; //deg
+let height = 100;//%
