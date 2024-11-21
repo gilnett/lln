@@ -5,25 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Rotation</title>
     <style>
+      body
+      {
+
+        display:flex;
+
+      }
       #image
       {
+        
         transition: transform 0.3s ease; 
+        height:100%;
       }
 
      
     </style>
 </head>
 <body>
-    <img src="image.png" id="image" alt="Image" width="200">
-    <button onclick="rotateImage()" id="droite">Tourner à droite</button>
-
-    <script>
-        let rotation = 0; 
-
-        function rotateImage() {
-            rotation += 45; 
-            document.getElementById('image').style.transform = `rotate(${rotation}deg)`;
+  <div id="info">
+    <p>Rotation: <span id="angle">0</span>°</p>
+    <p>Height: <span id="size">100</span>%</p>
+</div>
+    <div id="image"><img src="image.png"  alt="Image"></div>
+    <button onclick="droite()" id="droite">Tourner à droite</button>
+    <button onclick="gauche()" id="gauche">gauche</button>
+    <button onclick="axey()" id="height">Allonger</button>
+   <script>
+      function updateInfo() {
+            document.getElementById('angle').textContent = rotation;
+            document.getElementById('size').textContent = height;
         }
-    </script>
+    let rotation = 0; 
+    let height = 100;
+   </script>
+   <script src="allongée_gauchedroite.js"></script>
+   <script src="allongée_hautbas.js"></script>
+   <script src="droite.js"></script>
+   <script src="gauche.js"></script>
+
 </body>
 </html>
