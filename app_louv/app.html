@@ -11,12 +11,11 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&family=Passions+Conflict&family=Poppins:wght@400;500;600;700;900&display=swap"
         rel="stylesheet">
 
-    <script src="models/app.js"></script>
-
-    <script src="models/allongée_gauchedroite.js"></script>
-    <script src="models/allongée_hautbas.js"></script>
-    <script src="models/droite.js"></script>
-    <script src="models/gauche.js"></script>
+    <script src="models/app.js" defer></script>
+    <script src="models/allongée_gauchedroite.js" defer></script>
+    <script src="models/allongée_hautbas.js" defer></script>
+    <script src="models/droite.js" defer></script>
+    <script src="models/gauche.js" defer></script>
 </head>
 
 <body>
@@ -24,34 +23,38 @@
     <div class="container">
         <div class="container-card">
             <div class="card" id="card-2d" data-type="2D">
-                <h2>Inserer un modele 2D</h2>
+                <h2>Insérer un modèle 2D</h2>
                 <input type="file" accept="image/*" class="file-input" id="file-2d" hidden>
             </div>
             <div class="card" id="card-3d" data-type="3D">
-                <h2>Inserer un modele 3D</h2>
+                <h2>Insérer un modèle 3D</h2>
                 <input type="file" accept=".obj,.gltf,.glb" class="file-input" id="file-3d" hidden>
             </div>
         </div>
     </div>
 
     <div id="options-modal" class="modal hidden">
-        <div id="afficher" ><img src=""  alt="Image"></div>
-            <div class="modal-content">
-                <h3>Que voulez-vous faire ?</h3>
-                <button id="btn-modify-color">Modifier la couleur</button>
-                <button id="btn-modify-image">Modifier l'image</button>
-                
-                <button id="btn-close-modal">Annuler</button>
-
-                <button onclick="droite()" id="droite">Tourner à droite</button>
-                <button onclick="gauche()" id="gauche">gauche</button>
-                <button onclick="axey()" id="height">Allonger</button>
+        <div id="afficher">
+            <!-- Image only -->
+            <img src="" alt="Aperçu de l'image" style="max-width: 900px;max-height: 900px; ">
+        </div>
+        <div class="modal-content">
+            <h3>Que voulez-vous faire ?</h3>
+            <button id="btn-modify-color">Modifier la couleur</button>
+            <button id="btn-modify-image">Modifier l'image</button>
+            <button id="btn-close-modal">Annuler</button>
+            <button onclick="droite()" id="droite">Tourner à droite</button>
+            <button onclick="gauche()" id="gauche">Tourner à gauche</button>
+            <button onclick="axey()" id="height">Allonger</button>
+            <div id="image-info" style="margin-top: 20px;">
+                <h4>Informations sur l'image</h4>
+                <p>Rotation actuelle : <span id="angle">0°</span></p>
+                <p>Agrandissement : <span id="size">100%</span></p>
+                <p>Position (X, Y) : <span id="position">0px, 0px</span></p>
             </div>
+            
+        </div>
     </div>
-
-
-
-
 </body>
 
 </html>

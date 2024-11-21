@@ -1,7 +1,10 @@
-
-
 function gauche() {
     rotation -= 45; 
-    document.getElementById('image').style.transform = `rotate(${rotation}deg)`;
-    updateInfo();
+    const imgElement = document.querySelector("#afficher img"); // Sélectionne l'image via la const dans 2d
+    if (imgElement) {
+        imgElement.style.transform = `rotate(${rotation}deg)`; 
+        updateInfo();
+    } else {
+        console.error("L'image à faire tourner n'a pas été trouvée.");
+    }
 }

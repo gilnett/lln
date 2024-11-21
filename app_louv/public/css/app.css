@@ -64,6 +64,8 @@
 }
 
 .modal {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     top: 0;
     left: 0;
@@ -81,8 +83,10 @@
 }
 
 .modal-content {
+    display: flex;
     background-color: white;
     padding: 20px;
+    margin: 20px;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -103,7 +107,10 @@
     color: var(--text-color);
 }
 #afficher{
+    display: flex;
+    justify-content: center;
     background-color: blue;
-    width:100px;
-    height:100px;
+    width:1000px;
+    height:1000px;
+    overflow: hidden;
 }

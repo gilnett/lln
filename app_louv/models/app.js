@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".card");
     const modal = document.getElementById("options-modal");
+    const imgDisplay = document.querySelector("#afficher img");
     const btnModifyColor = document.getElementById("btn-modify-color");
     const btnModifyImage = document.getElementById("btn-modify-image");
     const btnCloseModal = document.getElementById("btn-close-modal");
@@ -35,11 +36,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // Gestion du fichier chargé
     function handleFileUpload(file, card) {
         if (!file) return;
-        selectedFile = file;
+
         const type = card.dataset.type;
 
-        alert(`Fichier ${file.name} chargé pour le modèle ${type}.`);
-        openModal();
+        // Si l'image est 2d
+        if (type === "2D" && file.type.startsWith("image/")) {
+            const reader = new FileReader();
+            reader.onload = () => {
+                imgDisplay.src = reader.result; // Mise à jour de l'image
+                imgDisplay.alt = file.name; 
+                openModal();
+            };
+            reader.readAsDataURL(file);
+        } else if (type === "3D") {
+            alert("la 3D c'est pas ici");
+        } else {
+            alert("Type de fichier non incompatible");
+        }
     }
 
     // Modale
@@ -53,21 +66,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     btnModifyImage.addEventListener("click", () => {
-       modifie()
-        modal.classList.add("file");
+        alert("Fonction 'Modifier l'image' en développement !");
+        modal.classList.add("hidden");
     });
 
     btnCloseModal.addEventListener("click", () => {
         modal.classList.add("hidden");
     });
 });
-//pour les angles et taille
+//les info de la taille angles et tous
 function updateInfo() {
-    document.getElementById('angle').textContent = rotation;
-    document.getElementById('size').textContent = height;
+    document.getElementById('angle').textContent = `${rotation}°`; // Affiche l'angle
 }
-//l'angles et la tailles a initialiser
-let rotation = 0; //deg
-let height = 100;//%
-let display = none;
-
+let rotation = 0;
