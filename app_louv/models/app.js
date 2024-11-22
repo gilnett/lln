@@ -77,5 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
 //les info de la taille angles et tous
 function updateInfo() {
     document.getElementById('angle').textContent = `${rotation}°`; // Affiche l'angle
+    document.getElementById('size').textContent = `${height}%`; // Affiche l'angle
 }
 let rotation = 0;

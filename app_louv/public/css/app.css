@@ -110,7 +110,12 @@
     display: flex;
     justify-content: center;
     background-color: blue;
-    width:1000px;
+    width: 1000px;;
     height:1000px;
     overflow: hidden;
+}
+#image{
+    background-color: blue;
+    width:auto;
+    height:auto;
 }
