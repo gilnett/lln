@@ -106,15 +106,9 @@
     background-color: var(--action-light);
     color: var(--text-color);
 }
-#afficher{
-    display: flex;
-    justify-content: center;
-    background-color: blue;
-    width: 1000px;;
-    height:1000px;
-    overflow: hidden;
-}
+
 #image{
+    display: flex;
     background-color: blue;
     width:auto;
     height:auto;
