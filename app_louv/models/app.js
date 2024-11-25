@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".card");
     const modal = document.getElementById("options-modal");
-    const imgDisplay = document.querySelector("#image img");
+    const imgDisplay = document.querySelector("#afficher img");
     const btnModifyColor = document.getElementById("btn-modify-color");
     const btnModifyImage = document.getElementById("btn-modify-image");
     const btnCloseModal = document.getElementById("btn-close-modal");
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (type === "3D") {
             alert("la 3D c'est pas ici");
         } else {
-            alert("Type de fichier incompatible");
+            alert("Type de fichier non incompatible");
         }
     }
 
@@ -77,8 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
 //les info de la taille angles et tous
 function updateInfo() {
     document.getElementById('angle').textContent = `${rotation}°`; // Affiche l'angle
-    if (sizeElement) {
-        sizeElement.textContent = `${Math.round(document.getElementById('height') / imgDisplay.naturalHeight) * 100}%`; // Affiche le pourcentage
-    }
+     
+    document.getElementById('hauteur').textContent = `${hauteur}%`; // Affiche le pourcentage
+        
 }
 let rotation = 0;
