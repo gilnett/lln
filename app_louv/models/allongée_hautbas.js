@@ -1,11 +1,26 @@
+let hauteur = 100; // Initialize height percentage
+
 function axey() {
-    let hauteur = 100;
-    hauteur += 10;
-    const imgElement = document.querySelector("#afficher img");// Sélectionne l'image via la const dans 2d
+    hauteur += 10; // Augmenter la hauteur de 10%
+    if (hauteur > 500) hauteur = 500; // Limiter la hauteur à 200%
+
+    const imgElement = document.getElementById("image");
+
     if (imgElement) {
-        
-        imgElement.style.height = `${hauteur}%`;
-        updateInfo();
-    } 
-   
-}
+      imgElement.style.height = `${hauteur}px`; // Modifier la hauteur
+      imgElement.style.width = "100px"; // Forcer la largeur constante
+      updateInfo();
+    }
+  }
+  function axeyreduc() {
+    hauteur -= 10; // Augmenter la hauteur de 10%
+    if (hauteur < 10) hauteur = 10; // Limiter la hauteur à 200%
+
+    const imgElement = document.getElementById("image");
+
+    if (imgElement) {
+      imgElement.style.height = `${hauteur}px`; // Modifier la hauteur
+      imgElement.style.width = "100px"; // Forcer la largeur constante
+      updateInfo();
+    }
+  }

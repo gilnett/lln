@@ -113,3 +113,20 @@
     width:auto;
     height:auto;
 }
+#afficher {
+    width: 600px; /* Limitez la largeur du conteneur */
+    height:500px;
+    margin: 20px auto;
+    border: 2px solid #000;
+    background-color: #fff;
+    overflow: hidden; /* Empêche les débordements */
+    display: flex;
+    justify-content: center;
+  }
+
+  #afficher img {
+    width: 100px; /* Fixez la largeur de l'image */
+    height: 100px; /* Maintient les proportions initiales */
+    margin: auto;
+    padding: auto;
+  }
