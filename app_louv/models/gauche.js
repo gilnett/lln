@@ -1,5 +1,6 @@
 function gauche() {
     rotation -= 45; 
+    if (rotation < -360) rotation = -360; 
     const imgElement = document.getElementById("image");
     if (imgElement) {
         imgElement.style.transform = `rotate(${rotation}deg)`; 

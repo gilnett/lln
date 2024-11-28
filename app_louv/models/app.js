@@ -8,9 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const d1 = document.getElementById("modifier");
     let selectedFile = null;
 
-    let rotation = 0; 
-    let hauteur = 100;  
-    let largeur = 100;
+   
     // Drag-and-drop et gestionnaire de fichiers
     cards.forEach(card => {
         const fileInput = card.querySelector(".file-input");
@@ -51,8 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 imgDisplay.alt = file.name;
 
                 // Mettre à jour la hauteur et ouvrir la modale
-                hauteur = imgDisplay.offsetHeight;
-                updateInfo();
+         
                 openModal();
             };
             reader.readAsDataURL(file);
@@ -83,9 +80,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Mise à jour des infos
-    function updateInfo() {
-        document.getElementById('angle').textContent = `${rotation}°`; 
-        document.getElementById('info-hauteur').textContent = `${hauteur}px`;
-        document.getElementById('info-largeur').textContent = `${largeur}px`;
-    }
+   
 });
