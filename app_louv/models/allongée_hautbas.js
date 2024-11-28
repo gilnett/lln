@@ -1,4 +1,4 @@
-let hauteur = 100; // Initialize height percentage
+
 
 function axey() {
     hauteur += 10; // Augmenter la hauteur de 10%
@@ -8,7 +8,10 @@ function axey() {
 
     if (imgElement) {
       imgElement.style.height = `${hauteur}px`; // Modifier la hauteur
-      imgElement.style.width = "100px"; // Forcer la largeur constante
+      const currentwidth = imgElement.offsetWidth;
+
+      // Appliquer la hauteur actuelle comme style
+      imgElement.style.width = `${currentwidth}px`;
       updateInfo();
     }
   }
@@ -20,7 +23,10 @@ function axey() {
 
     if (imgElement) {
       imgElement.style.height = `${hauteur}px`; // Modifier la hauteur
-      imgElement.style.width = "100px"; // Forcer la largeur constante
+      const currentwidth = imgElement.offsetWidth;
+
+      // Appliquer la hauteur actuelle comme style
+      imgElement.style.width = `${currentwidth}px`;
       updateInfo();
     }
   }

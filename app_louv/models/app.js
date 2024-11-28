@@ -3,10 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("options-modal");
     const imgDisplay = document.querySelector("#afficher img");
     const btnModifyColor = document.getElementById("btn-modify-color");
-    const btnModifyImage = document.getElementById("btn-modify-image");
     const btnCloseModal = document.getElementById("btn-close-modal");
+    const togg1 = document.getElementById("togg1");
+    const d1 = document.getElementById("modifier");
     let selectedFile = null;
 
+    let rotation = 0; 
+    let hauteur = 100;  
+    let largeur = 100;
     // Drag-and-drop et gestionnaire de fichiers
     cards.forEach(card => {
         const fileInput = card.querySelector(".file-input");
@@ -39,19 +43,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const type = card.dataset.type;
 
-        // Si l'image est 2d
+        // Si l'image est 2D
         if (type === "2D" && file.type.startsWith("image/")) {
             const reader = new FileReader();
             reader.onload = () => {
                 imgDisplay.src = reader.result; // Mise à jour de l'image
-                imgDisplay.alt = file.name; 
+                imgDisplay.alt = file.name;
+
+                // Mettre à jour la hauteur et ouvrir la modale
+                hauteur = imgDisplay.offsetHeight;
+                updateInfo();
                 openModal();
             };
             reader.readAsDataURL(file);
         } else if (type === "3D") {
-            alert("la 3D c'est pas ici");
+            alert("La 3D c'est pas ici");
         } else {
-            alert("Type de fichier non incompatible");
+            alert("Type de fichier incompatible");
         }
     }
 
@@ -65,27 +73,20 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.classList.add("hidden");
     });
 
-        let togg1 = document.getElementById("togg1");
-        let d1 = document.getElementById("modifier");
-        
-        togg1.addEventListener("click", () => {
-          if(getComputedStyle(d1).display != "none"){
-            d1.style.display = "none";
-          } else {
-            d1.style.display = "block";
-          }
-        })
-        
-        modal.classList.add("hidden");
-    });
-
     btnCloseModal.addEventListener("click", () => {
         modal.classList.add("hidden");
     });
-    
-//les info de la taille angles et tous
-function updateInfo() {
-    document.getElementById('angle').textContent = `${rotation}°`; // Angle info
-    document.getElementById('info-hauteur').textContent = `${hauteur}px`; // Height info
-}
 
+    // Toggle affichage
+    togg1.addEventListener("click", () => {
+        d1.style.display = getComputedStyle(d1).display !== "none" ? "none" : "block";
+    });
+
+    // Mise à jour des infos
+    function updateInfo() {
+        rotation = 0; // Angle par défaut pour la première mise à jour
+        hauteur = imgDisplay.offsetHeight; // Récupération de la hauteur de l'image
+        document.getElementById('angle').textContent = `${rotation}°`; // Angle info
+        document.getElementById('info-hauteur').textContent = `${hauteur}px`; // Height info
+    }
+});

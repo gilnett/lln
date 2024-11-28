@@ -1,6 +1,6 @@
 function gauche() {
     rotation -= 45; 
-    const imgElement = document.querySelector("image"); // Sélectionne l'image via la const dans 2d
+    const imgElement = document.getElementById("image");
     if (imgElement) {
         imgElement.style.transform = `rotate(${rotation}deg)`; 
         updateInfo();
