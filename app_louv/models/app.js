@@ -84,9 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Mise à jour des infos
     function updateInfo() {
-        rotation = 0; // Angle par défaut pour la première mise à jour
-        hauteur = imgDisplay.offsetHeight; // Récupération de la hauteur de l'image
-        document.getElementById('angle').textContent = `${rotation}°`; // Angle info
-        document.getElementById('info-hauteur').textContent = `${hauteur}px`; // Height info
+        document.getElementById('angle').textContent = `${rotation}°`; 
+        document.getElementById('info-hauteur').textContent = `${hauteur}px`;
+        document.getElementById('info-largeur').textContent = `${largeur}px`;
     }
 });

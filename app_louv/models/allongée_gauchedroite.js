@@ -1,4 +1,4 @@
-let largeur = 100; 
+ 
 
 function axex() {
   largeur += 10; // Augmenter la largeur de 10%
