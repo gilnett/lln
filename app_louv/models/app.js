@@ -65,15 +65,24 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.classList.add("hidden");
     });
 
-    btnModifyImage.addEventListener("click", () => {
-        alert("Fonction 'Modifier l'image' en développement !");
+        let togg1 = document.getElementById("togg1");
+        let d1 = document.getElementById("modifier");
+        
+        togg1.addEventListener("click", () => {
+          if(getComputedStyle(d1).display != "none"){
+            d1.style.display = "none";
+          } else {
+            d1.style.display = "block";
+          }
+        })
+        
         modal.classList.add("hidden");
     });
 
     btnCloseModal.addEventListener("click", () => {
         modal.classList.add("hidden");
     });
-});
+
 //les info de la taille angles et tous
 function updateInfo() {
     document.getElementById('angle').textContent = `${rotation}°`; // Angle info

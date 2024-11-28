@@ -130,3 +130,8 @@
     margin: auto;
     padding: auto;
   }
+
+  #modifier{
+    display:none;
+}
+
