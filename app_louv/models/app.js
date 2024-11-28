@@ -82,11 +82,10 @@ document.addEventListener("DOMContentLoaded", () => {
     btnCloseModal.addEventListener("click", () => {
         modal.classList.add("hidden");
     });
-
+    let rotation = 0;
 //les info de la taille angles et tous
 function updateInfo() {
     document.getElementById('angle').textContent = `${rotation}°`; // Angle info
     document.getElementById('info-hauteur').textContent = `${hauteur}px`; // Height info
 }
 
-let rotation = 0;

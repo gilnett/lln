@@ -39,20 +39,20 @@
             <img src="" id="image"alt="Aperçu de l'image" >
         </div>
         <div class="modal-content">
-            <h3>Que voulez-vous faire ?</h3>
             <button id="btn-modify-color">Modifier la couleur</button>
             <button id="togg1" >Modifier l'image</button>
             <button id="btn-close-modal">Annuler</button>
             
-            <div id="image-info" style="margin-top: 20px;">
+            <div id="image-info" >
                 <h4>Informations sur l'image</h4>
-                <p id="angle">0°</p> <!-- Affichage de l'angle -->
-                <p id="info-hauteur">100px</p> <!-- Mise à jour ici -->
+                <p id="angle">0°</p> 
+                <p id="info-hauteur">100px</p> 
             </div>
             
             
         </div>
-        <div id="modifier"> <button onclick="droite()" id="droite">Tourner à droite</button>
+        <div id="modifier" class="modal-content">
+            <button onclick="droite()" id="droite">Tourner à droite</button>
             <button onclick="gauche()" id="gauche">Tourner à gauche</button>
             <button onclick="axey()" id="hauteur">Allonger</button>
             <button onclick="axeyreduc()" id="hauteur">Compresser</button></div>
