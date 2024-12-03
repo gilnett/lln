@@ -80,5 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Mise à jour des infos
-   
-});
+    
+}); 
+
+
